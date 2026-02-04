@@ -1,13 +1,3 @@
-# Source Data Specification
-
-#### Context
-This update adds retroactive documentation for the code implemented in the merged branch `copilot/build-medallion-architecture-model`. Specifically, we detail the architecture design and highlight high-level implementation steps including:
-- Northwind database setup.
-- Notebook usage for ingestion and validation workflows.
-- Integration with the Medallion architecture layers (Bronze, Silver).
-
----
-
 # Source Data Initialization Specification for Northwind
 ### Objective
 Define the process for ingesting and initializing the Northwind data as source data for building a Medallion architecture pipeline. The goal is to process snapshots of data, focusing on 3-day incremental updates, and structure the data into the Bronze layer.
@@ -35,20 +25,3 @@ Define the process for ingesting and initializing the Northwind data as source d
 
 ---
 
-### High-Level Design Overview:
-
-#### Medallion Architecture Layers
-The project follows the Medallion Architecture pattern for structured data processing:
-
-1. **Bronze Layer**:
-   - Raw ingested data from the Northwind database.
-   - Full snapshots of data for three consecutive days.
-   - Retains record of all inserts, updates, and deletes.
-2. **Silver Layer**:
-   - Applies cleaning and transformation on the Bronze layer data.
-   - Adds business logic and additional metadata required for analytics.
-3. **Gold Layer**:
-   - Represents the final curated dataset cleaned in the Silver layer.
-   - Used for visualization and reporting.
-
----
