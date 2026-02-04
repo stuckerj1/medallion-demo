@@ -13,27 +13,27 @@ February 4, 2026
 ### 1. Documentation (1,387 lines)
 
 #### Architecture Specifications
-- **ARCHITECTURE.md** (154 lines): Complete medallion architecture specification
+- **architecture.md** (154 lines): Complete medallion architecture specification
   - Bronze, Silver, and Gold layer definitions
   - Data organization patterns
   - Quality gates framework
   - Recovery and reprocessing strategies
 
-- **DATA_VAULT_PRINCIPLES.md** (244 lines): Comprehensive Data Vault 2.0 guide
+- **data-vault-principles.md** (244 lines): Comprehensive Data Vault 2.0 guide
   - Hubs, Links, and Satellites explained
   - Implementation patterns and pseudocode
   - Hash key generation strategies
   - Type 1 vs Type 2 SCD guidance
   - Integration with medallion architecture
 
-- **DATA_QUALITY_FRAMEWORK.md** (325 lines): End-to-end quality framework
+- **data-quality-framework.md** (325 lines): End-to-end quality framework
   - Six quality dimensions (Accuracy, Completeness, Consistency, Timeliness, Uniqueness, Validity)
   - Layer-specific quality gates
   - Quality metrics and monitoring
   - Exception handling workflows
   - Quality improvement process
 
-- **IMPLEMENTATION_ROADMAP.md** (468 lines): Detailed 10-phase roadmap
+- **implementation-roadmap.md** (468 lines): Detailed 10-phase roadmap
   - Phase timelines and dependencies
   - Tasks and deliverables for each phase
   - Resource requirements
@@ -185,10 +185,10 @@ February 4, 2026
 medallion-demo/
 ├── README.md                              # Project overview
 ├── docs/                                  # Architecture documentation
-│   ├── ARCHITECTURE.md                    # Medallion architecture spec
-│   ├── DATA_VAULT_PRINCIPLES.md           # Data Vault 2.0 guide
-│   ├── DATA_QUALITY_FRAMEWORK.md          # Quality framework
-│   └── IMPLEMENTATION_ROADMAP.md          # 10-phase roadmap
+│   ├── architecture.md                    # Medallion architecture spec
+│   ├── data-vault-principles.md           # Data Vault 2.0 guide
+│   ├── data-quality-framework.md          # Quality framework
+│   └── implementation-roadmap.md          # 10-phase roadmap
 └── features/                              # BDD feature files
     ├── bronze/
     │   └── data_ingestion.feature         # Raw data ingestion
