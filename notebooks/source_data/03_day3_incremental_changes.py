@@ -113,17 +113,11 @@ customers_to_update = df_customers.limit(15).select("CustomerID").rdd.flatMap(la
 # New contact titles
 new_titles = ["Sales Manager", "Marketing Director", "Purchasing Manager", "Account Manager", "Sales Director"]
 
-# Update ContactTitle for selected customers
-df_customers_updated = df_customers.withColumn(
-    "ContactTitle",
-    when(col("CustomerID").isin(customers_to_update),
-         lit(new_titles[col("CustomerID").cast("string").cast("int") % len(new_titles) if col("CustomerID").cast("string").cast("int") is not None else 0]))
-    .otherwise(col("ContactTitle"))
-)
-
-# For customers without numeric IDs, use a different approach
+# Create mapping of customer IDs to new titles
 customer_title_map = {cust_id: new_titles[i % len(new_titles)] for i, cust_id in enumerate(customers_to_update)}
 
+# Update ContactTitle for selected customers
+df_customers_updated = df_customers
 for cust_id, title in customer_title_map.items():
     df_customers_updated = df_customers_updated.withColumn(
         "ContactTitle",

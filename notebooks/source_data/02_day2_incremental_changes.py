@@ -15,7 +15,7 @@
 # COMMAND ----------
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, current_timestamp, col, when
+from pyspark.sql.functions import lit, current_timestamp, col, when, date_add
 from pyspark.sql.types import *
 from datetime import datetime, timedelta
 import random
@@ -191,7 +191,7 @@ df_orders_updated = df_orders_existing.withColumn(
 ).withColumn(
     "OrderDate",
     when(col("OrderID").isin(orders_to_update),
-         col("OrderDate").cast("date") + 1)
+         date_add(col("OrderDate"), 1))
     .otherwise(col("OrderDate"))
 )
 
