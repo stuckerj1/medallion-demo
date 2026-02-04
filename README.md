@@ -63,6 +63,7 @@ The silver layer leverages Data Vault 2.0 principles for:
 - [Data Vault 2.0 Principles](docs/DATA_VAULT_PRINCIPLES.md) - Data Vault implementation patterns
 - [Data Quality Framework](docs/DATA_QUALITY_FRAMEWORK.md) - Quality gates and validation rules
 - [Implementation Roadmap](docs/IMPLEMENTATION_ROADMAP.md) - Phased implementation plan
+- [Northwind Setup Guide](docs/NORTHWIND_SETUP.md) - Source data initialization with 3-day snapshots
 
 ### BDD Feature Files
 
@@ -157,6 +158,21 @@ See [Implementation Roadmap](docs/IMPLEMENTATION_ROADMAP.md) for detailed timeli
 - Microsoft Fabric workspace
 - Access to source systems
 - Development environment setup
+
+### Quick Start with Northwind Sample Data
+
+To get started with a working example using the Northwind database:
+
+1. **Review the Setup Guide**: See [Northwind Setup Documentation](docs/NORTHWIND_SETUP.md) for detailed instructions
+2. **Run the Source Data Notebooks**: Execute the notebooks in `/notebooks/source_data/` to generate three days of snapshots
+3. **Ingest into Bronze Layer**: Run the Bronze ingestion notebook to load data with change tracking
+4. **Validate the Setup**: Use the validation notebook to verify everything is working correctly
+
+The Northwind implementation demonstrates:
+- Source data snapshots (Day 1: full load, Days 2-3: incremental changes)
+- Bronze layer ingestion with change tracking (`change_type`, `load_date`)
+- Insert, update, and delete operations across snapshots
+- Change detection using hash-based comparison
 
 ### Current Phase Activities
 
