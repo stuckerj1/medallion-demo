@@ -59,11 +59,11 @@ The silver layer leverages Data Vault 2.0 principles for:
 ## Documentation
 
 ### Specifications
-- [Architecture Specification](docs/ARCHITECTURE.md) - Detailed medallion architecture design
-- [Data Vault 2.0 Principles](docs/DATA_VAULT_PRINCIPLES.md) - Data Vault implementation patterns
-- [Data Quality Framework](docs/DATA_QUALITY_FRAMEWORK.md) - Quality gates and validation rules
-- [Implementation Roadmap](docs/IMPLEMENTATION_ROADMAP.md) - Phased implementation plan
-- [Northwind Setup Guide](docs/NORTHWIND_SETUP.md) - Source data initialization with 3-day snapshots
+- [Architecture Specification](docs/architecture.md) - Detailed medallion architecture design
+- [Data Vault 2.0 Principles](docs/data-vault-principles.md) - Data Vault implementation patterns
+- [Data Quality Framework](docs/data-quality-framework.md) - Quality gates and validation rules
+- [Implementation Roadmap](docs/implementation-roadmap.md) - Phased implementation plan
+- [Northwind Setup Guide](docs/northwind-setup.md) - Source data initialization with 3-day snapshots
 
 ### BDD Feature Files
 
@@ -141,7 +141,7 @@ sat_customer_details
 10. **Phase 9**: Production Deployment
 11. **Phase 10**: Continuous Improvement
 
-See [Implementation Roadmap](docs/IMPLEMENTATION_ROADMAP.md) for detailed timelines and deliverables.
+See [Implementation Roadmap](docs/implementation-roadmap.md) for detailed timelines and deliverables.
 
 ## Technology Stack
 
@@ -163,7 +163,7 @@ See [Implementation Roadmap](docs/IMPLEMENTATION_ROADMAP.md) for detailed timeli
 
 To get started with a working example using the Northwind database:
 
-1. **Review the Setup Guide**: See [Northwind Setup Documentation](docs/NORTHWIND_SETUP.md) for detailed instructions
+1. **Review the Setup Guide**: See [Northwind Setup Documentation](docs/northwind-setup.md) for detailed instructions
 2. **Run the Source Data Notebooks**: Execute the notebooks in `/notebooks/source_data/` to generate three days of snapshots
 3. **Ingest into Bronze Layer**: Run the Bronze ingestion notebook to load data with change tracking
 4. **Validate the Setup**: Use the validation notebook to verify everything is working correctly

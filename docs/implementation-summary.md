@@ -39,7 +39,7 @@ Successfully implemented a complete source data initialization system using the 
    - 50+ individual validation checks
 
 #### Documentation
-6. **`docs/NORTHWIND_SETUP.md`** (7,434 bytes)
+6. **`docs/northwind-setup.md`** (7,434 bytes)
    - Complete setup guide
    - Architecture diagrams
    - Usage instructions
