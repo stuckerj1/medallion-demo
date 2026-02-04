@@ -4,6 +4,25 @@
 
 This document specifies the medallion architecture for Microsoft Fabric, implementing a three-layer data processing pipeline: Bronze, Silver, and Gold. This architecture follows best practices for data lakehouse implementations and borrows principles from Data Vault 2.0 for the silver layer.
 
+### High-Level Design Overview:
+
+#### Medallion Architecture Layers
+The project follows the Medallion Architecture pattern for structured data processing:
+
+1. **Bronze Layer**:
+   - Raw ingested data from the Northwind database.
+   - Full snapshots of data for three consecutive days.
+   - Retains record of all inserts, updates, and deletes.
+2. **Silver Layer**:
+   - Applies cleaning and transformation on the Bronze layer data.
+   - Adds business logic and additional metadata required for analytics.
+3. **Gold Layer**:
+   - Represents the final curated dataset cleaned in the Silver layer.
+   - Used for visualization and reporting.
+
+---
+
+
 ## Architecture Layers
 
 ### Bronze Layer (Raw Data)
