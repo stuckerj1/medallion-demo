@@ -63,6 +63,7 @@ The silver layer leverages Data Vault 2.0 principles for:
 - [Data Vault 2.0 Principles](docs/data-vault-principles.md) - Data Vault implementation patterns
 - [Data Quality Framework](docs/data-quality-framework.md) - Quality gates and validation rules
 - [Error Handling in Source Data Generation](docs/error-handling-source-data.md) - Error capture, logging, and resolution strategies
+- [Source Data Validation](docs/source-data-validation.md) - Daily full snapshot validation strategy
 - [Implementation Roadmap](docs/implementation-roadmap.md) - Phased implementation plan
 - [Northwind Setup Guide](docs/northwind-setup.md) - Source data initialization with 3-day snapshots
 
