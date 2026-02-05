@@ -25,3 +25,33 @@ Define the process for ingesting and initializing the Northwind data as source d
 
 ---
 
+
+### Error Handling
+
+For comprehensive error handling strategies in source data generation scripts, see:
+- [Error Handling in Source Data Generation Scripts](error-handling-source-data.md) - Detailed documentation on capturing, logging, and resolving errors
+- [Source Data Error Handling Feature](../features/bronze/source_data_error_handling.feature) - BDD scenarios for error handling
+
+**Key Error Handling Principles:**
+
+1. **No Data Loss**: All source data must be preserved, even when errors occur
+2. **Quarantine Pattern**: Problematic data is isolated for investigation rather than discarded
+3. **Structured Logging**: All errors are logged with sufficient context for debugging
+4. **Continue on Error**: Processing continues for valid data when individual records fail
+5. **Alerting**: Critical errors trigger immediate notifications to operations
+
+**Common Error Types:**
+- Schema mismatches between source and expected structure
+- NULL values in required fields
+- Invalid data formats (dates, emails, etc.)
+- Referential integrity violations
+- Transformation failures
+- System/network errors
+
+**Error Resolution:**
+- Quarantined data can be corrected and reprocessed
+- Error logs track resolution status and notes
+- Metrics monitor error rates and resolution times
+- Integration with data quality framework for comprehensive monitoring
+
+---
